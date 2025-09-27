@@ -180,6 +180,68 @@ nav .container {
 .menu-toggle.active .bar:nth-child(3) {
   transform: rotate(-45deg) translate(6px, -6px);
 }
+/* ✅ Responsive Fixes */
+/* Mobile Navbar */
+@media (max-width: 991px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  #ftco-nav {
+    display: none; /* hidden by default */
+    flex-direction: column; 
+    background: rgba(15, 23, 42, 0.95);
+    padding: 10px; /* reduce padding */
+    gap: 8px;      /* reduce gap */
+    border-radius: 8px;
+    width: 200px;  /* optional: compact width */
+    position: absolute;
+    top: 60px;     /* just below navbar */
+    right: 20px;   /* align right */
+    z-index: 999;
+  }
+
+  #ftco-nav.show {
+    display: flex;
+    animation: slideDown 0.3s ease;
+  }
+
+  #ftco-nav ul {
+    flex-direction: column;
+    gap: 8px;      /* smaller spacing */
+    margin: 0;
+    padding: 0;
+  }
+
+  #ftco-nav ul li a {
+    padding: 8px 12px; /* smaller links */
+    font-size: 0.95rem;
+  }
+}
+.menu-toggle {
+  position: relative;
+  z-index: 1000;
+}
+
+  /* About Section */
+  #about-section { flex-direction: column; text-align: center; }
+  .about-img, .about-info { width: 100%; min-width: unset; }
+
+  /* Education Cards */
+  .edu-cards { flex-direction: column; align-items: center; }
+  .edu-card { width: 100%; max-width: 350px; }
+
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr; text-align: center; }
+  .footer-card { padding: 20px; }
+  .social-links a { margin: 8px; }
+}
+
+@media (max-width: 576px) {
+  .hero-content h1 { font-size: 1.8rem; }
+  .hero-content p { font-size: 0.95rem; }
+  nav .logo { font-size: 1rem; }
+}
 
 /* Show hamburger only on small screens */
 @media (max-width: 991px) {
