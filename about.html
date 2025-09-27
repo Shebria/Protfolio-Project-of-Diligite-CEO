@@ -4,13 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Md. Mosharraf Hossain | About</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+	<link rel="stylesheet" href="css/animate.css">
+	
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	
+	<link rel="stylesheet" href="css/flaticon.css">
+	<link rel="stylesheet" href="css/style.css">
+ 
   <style>
     /* Root Colors */
     :root {
@@ -26,6 +35,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
     body { background: var(--bg-dark); color: var(--text-light); overflow-x: hidden; }
       /* Navbar */
+     /* Navbar */
     nav {
       width: 100%;
       position: fixed;
@@ -36,24 +46,9 @@
       justify-content: space-between;
       align-items: center;
       padding: 1rem 5%;
-      background: transparent;
+      background: rgba(255, 255, 255, 0.8);
    
     }
-/* Space between logo and nav links */
-nav .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-nav .logo {
-  margin-right: 150px; /* adjust space between logo and links */
-}
-
-#ftco-nav {
-  margin-left: 150px; /* optional: push links further right */
-}
-
 
     nav .logo {
       font-size: 1.4rem;
@@ -69,7 +64,7 @@ nav .logo {
 
     nav ul li a {
       text-decoration: none;
-      color: white;
+     color: var(--text-light);
       font-weight: 500;
       position: relative;
       padding: 5px 0;
@@ -89,20 +84,31 @@ nav .logo {
 
     nav ul li a:hover::after {
       width: 100%;
+	    background: linear-gradient(90deg, var(--primary), var(--secondary));
     }
 /* General nav styling */
-.nav {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
- .nav li {
-  margin: 15px 0;
-}
-nav .container {
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem 5%;
+
+  /* Glass effect */
+  background: rgba(30, 31, 40, 0.6); /* slightly darker than page */
+  backdrop-filter: blur(15px); /* frosted blur */
+  -webkit-backdrop-filter: blur(15px); /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* subtle border */
+  border-radius: 15px; /* optional */
+}
+
+
+ .nav li {
+  margin: 15px 0;
 }
 
 .nav a {
@@ -116,12 +122,31 @@ nav .container {
   transition: all 0.3s ease;
   position: relative;
 }
+nav ul li a {
+  text-decoration: none;
+  color: var(--text-light);   /* <- your links take this */
+  font-weight: 500;
+  position: relative;
+  padding: 5px 0;
+  transition: 0.3s;
+}
+nav ul li a {
+  color: #fff !important;   /* force white */
+}
+
+nav ul li a:hover {
+  color: #f1f5f9 !important;  /* lighter hover effect */
+}
+nav .logo {
+  color: #fff !important;
+}
+
 
 /* Default active link */
  .nav a.active {
   background: linear-gradient(135deg, #ff4d6d, #ff6f91);
   color: #fff;
-  box-shadow: 0px 4px 10px rgba(255, 77, 109, 0.4);
+  box-shadow: 0px 4px 10px rgba(232, 230, 230, 0.4);
 }
 
 /* 🔥 Hover effect styles */
@@ -180,68 +205,6 @@ nav .container {
 .menu-toggle.active .bar:nth-child(3) {
   transform: rotate(-45deg) translate(6px, -6px);
 }
-/* ✅ Responsive Fixes */
-/* Mobile Navbar */
-@media (max-width: 991px) {
-  .menu-toggle {
-    display: flex;
-  }
-
-  #ftco-nav {
-    display: none; /* hidden by default */
-    flex-direction: column; 
-    background: rgba(15, 23, 42, 0.95);
-    padding: 10px; /* reduce padding */
-    gap: 8px;      /* reduce gap */
-    border-radius: 8px;
-    width: 200px;  /* optional: compact width */
-    position: absolute;
-    top: 60px;     /* just below navbar */
-    right: 20px;   /* align right */
-    z-index: 999;
-  }
-
-  #ftco-nav.show {
-    display: flex;
-    animation: slideDown 0.3s ease;
-  }
-
-  #ftco-nav ul {
-    flex-direction: column;
-    gap: 8px;      /* smaller spacing */
-    margin: 0;
-    padding: 0;
-  }
-
-  #ftco-nav ul li a {
-    padding: 8px 12px; /* smaller links */
-    font-size: 0.95rem;
-  }
-}
-.menu-toggle {
-  position: relative;
-  z-index: 1000;
-}
-
-  /* About Section */
-  #about-section { flex-direction: column; text-align: center; }
-  .about-img, .about-info { width: 100%; min-width: unset; }
-
-  /* Education Cards */
-  .edu-cards { flex-direction: column; align-items: center; }
-  .edu-card { width: 100%; max-width: 350px; }
-
-  /* Footer */
-  .footer-grid { grid-template-columns: 1fr; text-align: center; }
-  .footer-card { padding: 20px; }
-  .social-links a { margin: 8px; }
-}
-
-@media (max-width: 576px) {
-  .hero-content h1 { font-size: 1.8rem; }
-  .hero-content p { font-size: 0.95rem; }
-  nav .logo { font-size: 1rem; }
-}
 
 /* Show hamburger only on small screens */
 @media (max-width: 991px) {
@@ -249,79 +212,6 @@ nav .container {
     display: flex;
   }
 
-  #ftco-nav {
-    display: flex; /* hidden by default */
-    flex-direction: row;
-     align-items: center;
-  gap: 2rem;
-    background: rgba(15, 23, 42, 0.95);
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 15px;
-  }
-
-  #ftco-nav.show {
-    display: flex; /* visible when hamburger clicked */
-    animation: slideDown 0.3s ease;
-  }
-
-  #ftco-nav ul {
-  display: flex;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-  }
-}
-@media (max-width: 991px) {
-  #ftco-nav {
-    display: none; /* hidden by default on mobile */
-    flex-direction: column;
-    gap: 10px;
-    background: rgba(15, 23, 42, 0.95);
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 15px;
-  }
-  #ftco-nav.show {
-    display: flex; /* visible when hamburger clicked */
-  }
-}
-
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-10px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-
-
-    /* Navbar */
-    nav {
-      width: 100%; position: fixed; top: 0; left: 0; z-index: 100;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1rem 5%; background: transparent; backdrop-filter: blur(6px);
-    }
-    nav .logo { font-size: 1.5rem; font-weight: 700; color: white; }
-    nav ul { list-style: none; display: flex; gap: 2rem; }
-    nav ul li a {
-      text-decoration: none; color: white; font-weight: 500; position: relative;
-      padding: 5px 0; transition: 0.3s;
-    }
-    nav ul li a::after {
-      content: ""; position: absolute; width: 0%; height: 2px; left: 0; bottom: 0;
-      background: linear-gradient(90deg, var(--primary), var(--secondary)); transition: 0.3s;
-    }
-    nav ul li a:hover::after { width: 100%; }
-/* Show hamburger only on small screens */
-@media (max-width: 991px) {
-  .menu-toggle {
-    display: flex;
-  }
-/* Default active link */
- .nav a.active {
-  background: linear-gradient(135deg, #ff4d6d, #ff6f91);
-  color: #fff;
-  box-shadow: 0px 4px 10px rgba(255, 245, 245, 0.4);
-}
   #ftco-nav {
     display: none; /* hidden by default */
     flex-direction: column;
@@ -341,6 +231,7 @@ nav .container {
     flex-direction: column;
     gap: 10px;
   }
+  
 }
 
 @keyframes slideDown {
@@ -679,7 +570,7 @@ nav .container {
       <div class="footer-card">
         <h3>Quick Links</h3>
         <ul>
-          <li><a href="https://www.facebook.com/share/1PeQeRikT1/">Diligite</a></li>
+          <li><a href="index.html">Diligite</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="skills.html">Skills</a></li>
           <li><a href="projects.html">Achievements</a></li>
